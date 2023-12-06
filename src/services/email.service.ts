@@ -212,9 +212,9 @@ export class EmailService {
 
         for (const thread of threadsToBeReplied) {
             if (thread) {
-                new Promise((resolve: any, reject: any) => {
+                replyMessagePromises.push(new Promise((resolve: any, reject: any) => {
                     resolve(this.replyToMessage(thread, email, userGoogleId, labelId))
-                })
+                }))
             }
         };
 
